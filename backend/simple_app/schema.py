@@ -51,7 +51,7 @@ class Mutation(graphene.AbstractType):
 class Query(graphene.AbstractType):
     current_user = graphene.Field(UserType)
 
-    def resolve_current_user(self, args, context, info):
+    def resolve_current_user(self, args, **context):
         if not context.user.is_authenticated():
             return None
         return context.user
@@ -64,5 +64,5 @@ class Query(graphene.AbstractType):
 
     all_messages = DjangoFilterConnectionField(MessageType)
 
-    def resolve_all_messages(self, args, context, info):
+    def resolve_all_messages(self, args, first):
         return models.Message.objects.all()

@@ -1,7 +1,8 @@
 from rest_framework_jwt.authentication import JSONWebTokenAuthentication
+from django.utils.deprecation import MiddlewareMixin
 
 
-class JWTMiddleware(object):
+class JWTMiddleware(MiddlewareMixin):
     def process_view(self, request, view_func, view_args, view_kwargs):
         token = request.META.get('HTTP_AUTHORIZATION', '')
         if not token.startswith('JWT'):
@@ -13,3 +14,4 @@ class JWTMiddleware(object):
         except Exception:
             return
         request.user = auth[0]
+
