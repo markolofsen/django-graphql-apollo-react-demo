@@ -81,7 +81,7 @@ class ListView extends React.Component {
 const queryOptions = {
   options: props => ({
     variables: {
-      search: queryString.parse(props.location.search).search,
+      // search: queryString.parse(props.location.search).search,
       endCursor: null,
     },
   }),

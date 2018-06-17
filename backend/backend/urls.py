@@ -25,7 +25,7 @@ from rest_framework_jwt.views import obtain_jwt_token, refresh_jwt_token, verify
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('graphiql', csrf_exempt(GraphQLView.as_view(graphiql=True))),
+    path('graphql', csrf_exempt(GraphQLView.as_view(graphiql=True))),
     path('gql', csrf_exempt(GraphQLView.as_view(batch=True))),
     path('api-token-auth/', obtain_jwt_token),
     path('api-token-refresh/', refresh_jwt_token),

@@ -1,0 +1,14 @@
+djangorestframework
+django-cors-headers
+#graphene-django>=2.0
+djangorestframework-jwt
+django-filter==1.0.2 #important
+django==2.0.6
+
+
+
+graphene==1.4
+graphene-django==1.3
+graphql-core==1.1
+graphql-relay==0.4.5
+django-filter==1.0.2
